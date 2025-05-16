@@ -1,4 +1,4 @@
-from devices import listar_dispositivos
+from dispositivos import listar_dispositivos
 
 automatizaciones = [{
     "id_automatizacion": 1,
@@ -16,7 +16,7 @@ def activar_automatizacion(modo_automatizacion):
         if a["modo"].lower() == modo_automatizacion.lower():
             dispositivos = listar_dispositivos()
             for d in dispositivos:
-                if d["estado"] == "apagado" and d["tipo"] == "luz exterior led":
-                    d["estado"] = "encendido"
+                if d["estado"].lower() == "apagado" and d["tipo"].lower() == "luz exterior":
+                    d["estado"] = "Encendido"
                     dispositivos_modificados.append(d["id_dispositivo"])
             return dispositivos_modificados

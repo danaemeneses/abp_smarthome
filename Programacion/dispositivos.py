@@ -1,15 +1,15 @@
 dispositivos = [
     {
         "id_dispositivo": 1,
-        "nombre": "Habitación principal",
-        "tipo": "luz interior led",
-        "estado": "apagado"
+        "nombre": "Habitacion principal",
+        "tipo": "Luz interior",
+        "estado": "Apagado"
     },
     {
         "id_dispositivo": 2,
-        "nombre": "Jardín",
-        "tipo": "luz exterior led",
-        "estado": "apagado"
+        "nombre": "Jardin",
+        "tipo": "Luz exterior",
+        "estado": "Apagado"
     }
 ]
 
@@ -21,7 +21,7 @@ def agregar_dispositivo(nombre_dispositivo, tipo, estado):
         return "Error: Debes ingresar un nombre, tipo y estado."
 
     nuevo_dispositivo = {
-        "id_dispositivo": len(dispositivos) + 1,
+        "id_dispositivo":  max([d["id_dispositivo"] for d in dispositivos]) + 1,
         "nombre": nombre_dispositivo,
         "tipo": tipo,
         "estado": estado
